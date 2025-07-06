@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nature's Beauty</title>
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #f0f8ff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+    header {
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #2e8b57;
+    }
+    img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      margin: 20px 0;
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 700px;
+    }
+    button {
+      background: #2e8b57;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+    button:hover {
+      background: #246b45;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Nature's Beauty</h1>
+  </header>
+
+  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Beautiful Nature">
+
+  <p>
+    Nature is not a place to visit, it is home. Discover the stunning landscapes, breathe the fresh air, and feel the serenity of the Earth.
+  </p>
+
+  <button onclick="exploreNature()">Explore More</button>
+
+  <footer>
+    &copy; 2025 Nature's Beauty. All rights reserved.
+  </footer>
+
+  <script>
+    function exploreNature() {
+      alert("🌿 Thank you for choosing to explore nature! Stay tuned for more wonders 🌎");
+    }
+  </script>
+
+</body>
+</html>

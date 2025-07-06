@@ -1,0 +1,51 @@
+-- Create the database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS JOINING;
+
+-- Use the JOINING database
+USE JOINING;
+
+-- Create STUDENTS table
+CREATE TABLE STUDENT (
+	STUDENT_ID INT PRIMARY KEY,
+    STUDENT_NAME VARCHAR(50) NOT NULL
+);
+
+-- Insert values into STUDENTS
+INSERT INTO STUDENT (STUDENT_ID, STUDENT_NAME)
+VALUES 
+(1, 'CHANDERMANI'),
+(2, 'ANKIT'),
+(3, 'AMIT'),
+(4, 'KESHAV'),
+(5, 'MAHESH'),
+(6, 'SARTHAK'),
+(7, 'PARTHAM'),
+(8, 'JIYA'),
+(9, 'PRIYA'),
+(10, 'PRACHI');
+
+-- Create COURSES table
+CREATE TABLE COURSE (
+	STUDENT_ID INT,
+	COURSES VARCHAR(50) DEFAULT 'B.TECH'
+);
+
+-- Insert values into COURSES
+INSERT INTO COURSE (STUDENT_ID, COURSES)
+VALUES 
+(1, 'B.TECH'),
+(2, 'B.TECH'),
+(3, 'B.TECH'),
+(4, 'B.TECH'),
+(5, 'BCA'),
+(6, 'BCA'),
+(7, 'B.TECH'),
+(8, 'B.PHARMACY'),
+(9, 'B.PHARMACY'),
+(10, 'B.PHARMACY');
+
+-- Perform INNER JOIN to display student details with their courses
+SELECT * 
+FROM STUDENT AS S
+INNER JOIN COURSE AS C 
+ON S.STUDENT_ID = C.STUDENT_ID;

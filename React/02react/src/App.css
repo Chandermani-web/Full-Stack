@@ -1,0 +1,105 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navbar nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Product Grid */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.product-details {
+  padding: 1rem;
+}
+
+.product-details h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  height: 3.2rem;
+  overflow: hidden;
+}
+
+.product-details .desc {
+  font-size: 0.9rem;
+  color: #555;
+  height: 3.5rem;
+  overflow: hidden;
+}
+
+.product-details .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+  margin: 0.5rem 0;
+}
+
+.product-details .rating {
+  font-size: 0.9rem;
+  color: #f39c12;
+}
+
+/* Footer */
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,78 @@
+body{
+    background: radial-gradient(circle , black 15%, darkblue 30%);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: black;
+    padding: 30px 0;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    gap: 20px;
+    padding: 100px;
+    border-left: 10px double black;
+    border-bottom: 10px solid black;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+
+.input-container, .btn-container{
+    flex: 1;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.input-container input{
+    border: none;
+    padding: 5px 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    outline: none;
+    height: 30px;
+    width: 60%;
+    font-size: 25px;
+}
+
+button{
+    border: none;
+    background-color: blue;
+    color: white;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+button:hover{
+    background-color: green;
+}
+
+.btn-container{
+    gap: 10px;
+}
+
+label{
+    color: black;
+    font-size: larger;
+    font-weight: 800;
+    font-size: x-large;
+}
+
+.generate-btn{
+    padding: 10px;
+    border-radius: 0;
+    font-size: large;
+    background-color: black;
+}
+
+.generate-btn:hover>{
+    background-color: green;
+    transition: 0.5s;
+}

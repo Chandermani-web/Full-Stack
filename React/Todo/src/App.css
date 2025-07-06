@@ -1,0 +1,133 @@
+:root{
+  --background: #1a1f2c;
+  --cardbgc: #252834;
+  --text: #ffffff;
+  --subtleelements: #8E9196;
+  --accents: #1EAEDB;
+}
+
+body{
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  font-size: x-large;
+  color: var(--text);
+}
+
+input{
+  color: var(--text);
+}
+
+.container{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading div{
+  line-height: 10px;
+}
+
+.heading p{
+  color: var(--subtleelements);
+}
+
+.card-container{
+  display: flex;
+  gap: 20px;
+}
+
+.card-container div{
+  flex: 1;
+  border: 1px solid #3B3E49;
+  background-color: var(--cardbgc);
+  padding: 1% 10px;
+  display: flex;
+  flex-direction: column;
+  line-height: 20px;
+  border-radius: 10px;
+}
+
+.addtask-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px 0;
+} 
+
+.addtask-container div{
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.addtask-container .addtask1 input{
+  width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid gray;
+}
+
+.addtask1 select{
+  width: 25%;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gold;
+}
+
+.addtask1 option{
+  background-color: var(--background);
+}
+
+.addtask2 input{
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid gray;
+}
+
+.addtask2 button{
+  background-color: var(--accents);
+  border-radius: 10px;
+  padding: 0 20px;
+  color: var(--background);
+  font-weight: 700;
+}
+
+.addtask2 button:hover{
+  background: linear-gradient();
+  color: black;
+}
+
+.search-container{
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color: var(--subtleelements);
+  background-color: var(--cardbgc);
+}
+
+.search-container input{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+

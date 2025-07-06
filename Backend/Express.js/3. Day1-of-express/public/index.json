@@ -1,0 +1,79 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "name": "Mountain Landscape",
+      "url": "https://images.unsplash.com/photo-1707345512638-997d31a10eaa?w=500&auto=format"
+    },
+    {
+      "id": 2,
+      "name": "Beach Sunset",
+      "url": "https://images.pexels.com/photos/994605/pexels-photo-994605.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+      "id": 3,
+      "name": "Forest Path",
+      "url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&auto=format"
+    },
+    {
+      "id": 4,
+      "name": "City Skyline",
+      "url": "https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+      "id": 5,
+      "name": "Desert Dunes",
+      "url": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=500&auto=format"
+    },
+    {
+      "id": 6,
+      "name": "Waterfall",
+      "url": "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+      "id": 7,
+      "name": "Autumn Leaves",
+      "url": "https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=500&auto=format"
+    },
+    {
+      "id": 8,
+      "name": "Winter Snow",
+      "url": "https://images.pexels.com/photos/325944/pexels-photo-325944.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+      "id": 9,
+      "name": "Ocean Waves",
+      "url": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=500&auto=format"
+    },
+    {
+      "id": 10,
+      "name": "Wildlife Deer",
+      "url": "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+      "id": 11,
+      "name": "Tropical Island",
+      "url": "https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=500&auto=format"
+    },
+    {
+      "id": 12,
+      "name": "Northern Lights",
+      "url": "https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+      "id": 13,
+      "name": "Flower Garden",
+      "url": "https://images.unsplash.com/photo-1526397751294-331021109fbd?w=500&auto=format"
+    },
+    {
+      "id": 14,
+      "name": "Canyon View",
+      "url": "https://images.pexels.com/photos/45839/antelope-canyon-arizona-sandstone-rock-45839.jpeg?auto=compress&cs=tinysrgb&w=500"
+    },
+    {
+      "id": 15,
+      "name": "Lakeside Cabin",
+      "url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=500&auto=format"
+    }
+  ]
+}

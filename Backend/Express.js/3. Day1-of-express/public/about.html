@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About - Nature's Beauty</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #e6f7ff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    header {
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #2e8b57;
+    }
+    section {
+      max-width: 800px;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    button {
+      background: #2e8b57;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+    button:hover {
+      background: #246b45;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>About Us</h1>
+  </header>
+
+  <section>
+    <p>
+      At <strong>Nature's Beauty</strong>, we believe that nature holds the key to true happiness and peace.  
+      Our mission is to reconnect people with the natural world through stunning imagery, inspiring stories, and eco-friendly initiatives.
+    </p>
+    <p>
+      From the tallest mountains to the deepest oceans, every part of Earth has a story worth sharing.  
+      Join us as we explore, protect, and celebrate our planet's breathtaking beauty.
+    </p>
+
+    <button onclick="goHome()">Back to Home</button>
+  </section>
+
+  <footer>
+    &copy; 2025 Nature's Beauty. All rights reserved.
+  </footer>
+
+  <script>
+    function goHome() {
+      window.location.href = "index.html"; // link to home
+    }
+  </script>
+
+</body>
+</html>

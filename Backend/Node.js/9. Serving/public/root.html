@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0a0a23;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      color: gold;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+    section {
+      padding: 4rem 2rem;
+      background: #111;
+    }
+    .card {
+      background: #1a1a2e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      margin: 1rem 0;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    footer {
+      background: #0a0a23;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">👋 I'm Himanshu</h1>
+    <p id="desc">A passionate developer crafting sleek and smart web solutions</p>
+  </header>
+
+  <section>
+    <div class="card">💼 Project 1 - ToDo List</div>
+    <div class="card">📈 Project 2 - Financial Dashboard</div>
+    <div class="card">🤖 Project 3 - AI Chatbot</div>
+  </section>
+
+  <footer>
+    Built with ❤️ by Himanshu
+  </footer>
+
+  <script>
+    gsap.from("#title", { y: -100, opacity: 0, duration: 1 });
+    gsap.from("#desc", { y: 50, opacity: 0, duration: 1, delay: 0.5 });
+    gsap.from(".card", {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".card",
+        start: "top 80%",
+      }
+    });
+  </script>
+</body>
+</html>

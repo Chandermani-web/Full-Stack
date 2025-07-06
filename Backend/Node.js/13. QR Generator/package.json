@@ -1,0 +1,21 @@
+{
+  "name": "13.-qr-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Chandermani",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "@inquirer/input": "^4.1.9",
+    "inquirer": "^12.6.0",
+    "qr-image": "^3.2.0"
+  }
+}

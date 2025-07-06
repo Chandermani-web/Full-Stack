@@ -1,0 +1,234 @@
+/* Reset and base styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Header styling */
+
+header {
+  background-color: #343a40;
+  color: white;
+  padding: 10px
+}
+
+header nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+}
+
+nav h1{
+  color: #28a745;
+}
+
+header nav ul{
+  list-style: none;
+  display: flex;
+  gap: 50px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* Heading */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+
+/* Product Grid */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.product-details {
+  padding: 1rem;
+}
+
+.product-details h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  height: 3.2rem;
+  overflow: hidden;
+}
+
+.product-details .desc {
+  font-size: 0.9rem;
+  color: #555;
+  height: 3.5rem;
+  overflow: hidden;
+}
+
+.product-details .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+  margin: 0.5rem 0;
+}
+
+.product-details .rating {
+  font-size: 0.9rem;
+  color: #f39c12;
+}
+
+/* posts */
+
+/* Container for the entire post list */
+.post-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+  background-color: #f7f7f7;
+}
+
+/* Each post card */
+.post-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.post-card:hover {
+  transform: scale(1.02);
+}
+
+/* Title */
+.post-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Description */
+.post-card .desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* User ID */
+.post-card .userid {
+  font-size: 0.85rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Carts */
+
+/* Wrapper for entire cart section */
+.carts-wrapper {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+}
+
+/* Grid layout for cart cards */
+.carts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual cart card */
+.cart-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cart-card:hover {
+  transform: translateY(-5px);
+}
+
+/* User info */
+.cart-card h2 {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.cart-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.3rem 0;
+}
+
+/* Product list inside each cart */
+.product-list {
+  margin-top: 1rem;
+}
+
+.product-list strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.product-list ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.product-list li {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+
+
+/* footer styling */
+
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}

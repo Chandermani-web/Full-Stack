@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #000;
+        color: white;
+        font-family: "arial", sans-serif;
+        width: 100vw;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        /* overflow: hidden; */
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        place-content: center;
+        align-items: center;
+        height: 400px;
+        width: 400px;
+        border: 1px solid white;
+        border-radius: 30% 80% 80% 50% / 50% 80% 50% 80%;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -999;
+      }
+
+      .container.active {
+        animation: borderradius 3s infinite alternate;
+        box-shadow: 0 0 30px aqua;
+        background-color: aquamarine;
+      }
+
+      @keyframes borderradius {
+        0% {
+          border-radius: 30% 80% 80% 50% / 50% 80% 50% 80%;
+        }
+        25% {
+          border-radius: 80% 50% 50% 30% / 30% 80% 30% 50%;
+        }
+        50% {
+          border-radius: 50% 30% 30% 80% / 80% 50% 80% 30%;
+        }
+        75% {
+          border-radius: 80% 50% 50% 30% / 30% 80% 30% 50%;
+        }
+        100% {
+          border-radius: 50% 30% 30% 80% / 80% 50% 80% 30%;
+        }
+      }
+
+      .heading {
+        background: linear-gradient(45deg, aqua, blue, purple, red);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1px cornflowerblue; /* Optional stroke */
+        cursor: pointer;
+      }
+
+      .heading:hover {
+        border: 2px solid black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        transition: all 0.3s ease-in-out;
+      }
+
+      .container2.inactive {
+        display: none;
+      }
+
+      .container2 {
+        width: 100vw;
+        /* height: 100vh; */
+        padding: 20px;
+      }
+
+      .container2 section {
+        color: gray;
+        display: inline-block;
+        width: 300px;
+        font-size: small;
+      }
+
+      section h1 {
+        color: white;
+        text-shadow: 0 0 10px white;
+      }
+
+      section:nth-child(1) {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+      }
+
+      section:nth-child(2) {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+      }
+
+      section:nth-child(3) {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+      }
+
+      section:nth-child(4) {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container active">
+      <h1 class="heading">Start</h1>
+    </div>
+
+    <div class="container2 inactive">
+      <section>
+        <h1>About the Project</h1>
+        <hr />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, aut
+          voluptatibus. Architecto dolorem, culpa porro odio eius dignissimos
+          repellat quibusdam dolore perferendis ratione laboriosam quidem
+          provident adipisci, nam, laborum magni.
+        </p>
+      </section>
+      <section>
+        <h1>Project Title</h1>
+        <hr />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam minima
+          amet, ullam vitae nihil sint rerum ducimus nulla placeat eligendi esse
+          itaque? Aliquid rem fuga itaque animi laudantium accusamus sit!
+        </p>
+      </section>
+      <section>
+        <h1>Project Description</h1>
+        <hr />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus,
+          voluptatum. Quisquam, cumque. Doloremque, asperiores. Quos, cumque!
+          Doloribus, voluptatum. Quisquam, cumque. Doloremque, asperiores. Quos,
+          cumque! Doloribus, voluptatum. Quisquam, cumque.
+        </p>
+      </section>
+      <section>
+        <h1>Tech Stack</h1>
+        <hr />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
+          incidunt tempora optio voluptate accusantium. Accusamus rem
+          perferendis amet corporis facilis. Molestiae inventore quam fugit
+          dolorum eligendi fugiat aperiam, facere hic.
+        </p>
+      </section>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+      integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      let container = document.querySelector(".container");
+      let heading = document.querySelector(".heading");
+      let container2 = document.querySelector(".container2");
+
+      // 🔄 Restore state on page load
+      if (sessionStorage.getItem("containerState") === "true") {
+        container.classList.remove("active");
+        container.classList.add("inactive");
+        container2.classList.remove("inactive");
+        heading.textContent = "";
+        // Trigger animation on page load
+        animateSections();
+      }
+
+      heading.addEventListener("click", () => {
+        container.classList.toggle("active");
+        container.classList.toggle("inactive");
+        heading.textContent = container.classList.contains("active")
+          ? "Chutr Putr"
+          : "";
+        sessionStorage.setItem(
+          "containerState",
+          container.classList.contains("inactive")
+        );
+
+        // Trigger animation when container becomes inactive
+        if (container.classList.contains("inactive")) {
+          container2.classList.remove("inactive");
+          // Small delay to ensure DOM is updated
+          setTimeout(() => {
+            animateSections();
+          }, 50);
+        } else {
+          container2.classList.add("inactive");
+        }
+      });
+
+      // Function to handle the animation
+      function animateSections() {
+        const sections = document.querySelectorAll(".container2 section");
+        if (sections.length > 0) {
+          // Reset any existing animations
+          gsap.killTweensOf(sections);
+
+          const timeline = gsap.timeline({
+            defaults: {
+              ease: "power2.out",
+            },
+          });
+
+          timeline.from(sections, {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            clearProps: "all",
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
