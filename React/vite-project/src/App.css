@@ -1,42 +1,102 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  background-color: #0d1117;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #c9d1d9;
+  margin: 0;
+  padding: 20px 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.users-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  animation: fadeIn 1.2s ease-in;
+  text-align: left;
 }
 
-@keyframes logo-spin {
+.user-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.6s ease-in-out;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  border-color: #58a6ff;
+}
+
+.name {
+  color: #58a6ff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.username,
+.email,
+.address p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #8b949e;
+}
+
+.address {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #30363d;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(15px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+.phone,
+.website,
+.company {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #c9d1d9;
 }
 
-.card {
-  padding: 2em;
+.website a {
+  color: #58a6ff;
+  text-decoration: none;
 }
 
-.read-the-docs {
-  color: #888;
+.website a:hover {
+  text-decoration: underline;
+}
+
+.company {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #30363d;
+}
+
+input{
+  width: 600px;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
 }

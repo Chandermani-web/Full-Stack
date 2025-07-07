@@ -1,7 +1,10 @@
 import React from "react";
 import "./App.css";
+import 'remixicon/fonts/remixicon.css'
+import { useState } from "react";
 
 const App = () => {
+  
   const productlist = [
     {
       id: 1,
@@ -271,9 +274,17 @@ const App = () => {
     },
   ];
 
+  const [filterproduct,setfilterproduct] = useState(productlist);
+
+  const searchitem = (e) => {
+    const value = e.target.value.toLowerCase();
+    setfilterproduct(productlist.filter((fil)=>fil.title.toLowerCase().includes(value)));
+  }
+
+
   const Product = ({ product }) => {
     return (
-      <div className="product-card">
+      <div className="product-card" >
         <img src={product.image} alt={product.title} />
         <div className="product-details">
           <h2>{product.title}</h2>
@@ -292,6 +303,10 @@ const App = () => {
       {/* Navbar */}
       <header className="navbar">
         <div className="logo">🛍️ ShopEase</div>
+        <div className="search-box">
+          <input type="text" placeholder="Search.. " onChange={searchitem}/>
+          <i className="ri-search-line"></i>
+        </div>
         <nav>
           <ul>
             <li>
@@ -312,7 +327,7 @@ const App = () => {
 
       {/* Product Grid */}
       <main className="product-container">
-        {productlist.map((item) => (
+        {filterproduct.map((item) => (
           <Product key={item.id} product={item} />
         ))}
       </main>

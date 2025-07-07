@@ -20,6 +20,27 @@ body {
   font-weight: bold;
 }
 
+.navbar .search-box {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: black;
+}
+
+.navbar .search-box input{
+  outline: none;
+  border: none;
+}
+
+.navbar .search-box i{
+  color: orange;
+  font-weight: bold;
+}
+
 .navbar nav ul {
   list-style: none;
   display: flex;
