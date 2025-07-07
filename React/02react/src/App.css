@@ -124,3 +124,108 @@ body {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+
+
+
+/* Productdetail styling */
+
+.product-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-detail .product-detail-child{
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-content: center;
+}
+
+.product-detail div:nth-child(1){
+  background: #000;
+}
+
+.product-detail img{
+  height: 500px;
+  width: 80%;
+  object-fit: contain;
+  box-shadow: 0 0 20px white;
+}
+
+.product-detail img:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px aqua;
+  transition: all 0.4s ease-in-out ;
+}
+
+.product-detail div:nth-child(2){
+  align-items: flex-start;
+}
+
+.product-detail div:nth-child(2) h2{
+ font-size: 2em;
+ text-shadow: 0 0 5px gray;
+}
+
+div:nth-child(2) .desc {
+  color: #555;
+}
+
+div:nth-child(2) .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+div:nth-child(2) .rating {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.count {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.count span{
+  color: black;
+}
+
+.count i {
+  cursor:   pointer;
+  padding: 5px;
+  border-radius: 5px;
+  background: #333;
+  transition: 0.3s;
+}
+
+.count i:hover {
+  background: #444;
+  transform: scale(1.2);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
