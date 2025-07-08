@@ -46,7 +46,7 @@ const App = () => {
     setfilterphotos(filtered);
   };
 
-  if (photos.length === 0) {
+  if (filterphotos.length === 0) {
     return <Skeleton />;
   }
 
