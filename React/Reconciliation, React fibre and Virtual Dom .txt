@@ -1,0 +1,160 @@
+************************************Definition***************************************8
+🔹 What is React Fiber?
+
+    React Fiber is the newer internal engine of React (since React 16). It’s a complete rewrite of the old React core algorithm to make React faster, more flexible, and capable of features like:
+
+    Concurrency (or interruptible rendering) — React can pause work and continue later.
+    Better error handling
+    Smooth animations
+    Prioritized updates
+
+    👉 Think of Fiber as React's "brain" that helps it render components efficiently by splitting rendering work into units that can be paused and resumed.
+
+🔹 What is Reconciliation?
+    Reconciliation is the process React uses to compare the previous Virtual DOM tree with the new one and figure out:
+
+        What has changed?
+        What should be updated in the real DOM?
+
+    React does this using a diffing algorithm. The goal is to update only the parts of the DOM that changed, not the whole page.
+
+🔹 How does React Fiber help Reconciliation?
+    Before React Fiber: 
+        React used a recursive algorithm that couldn’t be paused once it started rendering.
+    With Fiber:
+        React breaks the work into small units of work.
+        These can be paused, aborted, or resumed.
+        It allows smoother user experiences (e.g., while typing, scrolling, or animating).
+
+    This makes Reconciliation faster and smarter.
+
+
+
+***********************Important***************************************************
+***********************Processing of this all in sequence****************************
+
+🎯 Real-Life Analogy: Updating a Website Like Updating a Notice Board
+
+Imagine you run a college notice board.
+
+🧠 You are React (the brain)
+You get regular updates about:
+
+    New events
+    Class changes
+    Exam announcements
+
+But instead of rewriting the whole notice board, you:
+
+    1.Look at the old notice board (what’s already there)
+    2.Compare it with the new information
+    3.Update only the changed notices
+
+This process is Reconciliation — comparing old vs new and changing only what’s needed.
+
+
+React Fibre
+🛠️ Who helps you do this efficiently? — React Fiber
+
+Now, imagine:  
+
+    You get 100 updates at once.
+    Instead of updating everything at once (which will take a lot of time), you decide to:
+
+        Break the updates into small tasks
+        Do the most important ones first (e.g., today’s exam)
+        Pause when someone talks to you (user scrolling or typing)
+        Resume updating later
+
+This is what React Fiber does. It breaks work into units and pauses/resumes work to keep things fast and smooth.
+
+
+
+***************************How this work in react Step by step*****************************
+🖥️ How this works in React (Step-by-Step)
+Now let’s see this in React’s context:
+
+👣 Step-by-step process:
+Step	Description
+1️⃣	You write a component like <Profile name="Himanshu" />
+2️⃣	React builds a Virtual DOM — a JavaScript object that represents what the UI should look like
+3️⃣	React compares this new Virtual DOM with the previous one (Reconciliation)
+4️⃣	React Fiber kicks in and schedules and prioritizes what should be updated first
+5️⃣	React updates only the parts of the real DOM that changed
+6️⃣	The user sees the updated UI — faster, smoother experience
+
+
+
+****************************Example***********************************
+
+Let’s say your webpage shows:
+
+Name: Himanshu
+Age: 19
+City: Gurgaon
+
+Now you update your age to 20.
+
+Here’s what React does:
+
+1.Builds a new virtual DOM with Age: 20
+2.Compares it with the old one (Age: 19)
+3.Finds only "Age" changed
+4.Fiber says:
+    “This is a small change, let’s do it immediately.”
+5.React updates only the age text on the real page.
+
+✅ Result: Only one small change, super fast!
+
+
+
+*****************************🧠 Final Recap in Simple Words*********************************
+    React Fiber = The smart engine that breaks work into small pieces and runs them efficiently.
+    Reconciliation = The smart comparison between old and new UI to know what changed.
+    Virtual DOM = The blueprint of your UI in JavaScript.
+    Real DOM = What the user actually sees on the screen.
+React combines them all to update the UI quickly and efficiently.
+
+
+*****************************Important***********************************************
+****************************🔁 React Internal Workflow: Step-by-Step (with Priorities)******************************
+
+[1] You Write React Components (JSX)
+        ↓
+[2] React Creates Virtual DOM
+        ↓
+[3] Trigger Happens (State/Props Change, User Event)
+        ↓
+[4] React Starts Reconciliation
+        ↓
+[5] React Fiber Schedules Updates
+   ├── High Priority: Input typing, animations
+   ├── Medium: Visible component changes
+   └── Low: Off-screen components
+        ↓
+[6] React Fiber Breaks Updates into Units of Work
+        ↓
+[7] Browser Idle Time → React Starts Rendering Work
+        ↓
+[8] Virtual DOM Compared with Previous Version
+        ↓
+[9] Find What Changed (Diffing)
+        ↓
+[10] Update Real DOM (only the differences)
+        ↓
+[11] Commit Phase: React applies changes to DOM
+        ↓
+[12] Browser Repaints UI (you see changes)
+        ↓
+[13] Done ✅
+        ↑
+        └──── Loops again when next update happens
+
+
+**************************🟩 Priority-Based Execution (by Fiber)*******************************88
+
+Priority Level	         Type of Task	                                  Handled When
+
+🔴 Urgent	        Typing, clicking buttons, text input	              Immediately (high-priority)
+🟡 Normal	        Component re-renders, state changes	                  When browser has time
+🔵 Idle	            Preloading images, hidden sections	                  When nothing else is urgent
