@@ -24,7 +24,7 @@ const ProductList = () => {
         <img src={product.image} alt={product.title} />
         <div className="product-details">
           <h2>{product.title}</h2>
-          <p className="desc">{product.description}</p>
+          {/* <p className="desc">{product.description}</p> */}
           <p className="price">Price: ${product.price}</p>
           <p className="rating">
             Rating: {product.rating.rate} ⭐ ({product.rating.count} reviews)
