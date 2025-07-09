@@ -1,0 +1,147 @@
+/*  */
+.image-detail-api-container{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+/* main container for image and buttons */
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    padding-left: 15%;
+}
+
+/* Image container styling */
+.gallery-id-image{
+    height: 440px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px aqua;
+    animation: morph 3s alternate
+     0s infinite 
+}
+
+.gallery-id-image:hover{
+    animation: none;
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 60% 70% 65% 75% / 65% 60% 70% 60%;
+  }
+  10% {
+    border-radius: 75% 60% 80% 70% / 70% 65% 60% 75%;
+  }
+  20% {
+    border-radius: 80% 65% 75% 60% / 60% 70% 65% 80%;
+  }
+  30% {
+    border-radius: 65% 75% 70% 80% / 75% 60% 70% 65%;
+  }
+  40% {
+    border-radius: 70% 60% 80% 65% / 80% 75% 60% 70%;
+  }
+  50% {
+    border-radius: 85% 75% 60% 70% / 70% 85% 75% 60%;
+  }
+  60% {
+    border-radius: 80% 85% 75% 65% / 65% 80% 85% 75%;
+  }
+  70% {
+    border-radius: 75% 60% 80% 70% / 70% 75% 60% 80%;
+  }
+  80% {
+    border-radius: 65% 70% 85% 75% / 75% 65% 70% 85%;
+  }
+  90% {
+    border-radius: 60% 85% 70% 80% / 80% 60% 85% 70%;
+  }
+  100% {
+    border-radius: 60% 70% 65% 75% / 65% 60% 70% 60%;
+  }
+}
+
+.prev-next-btns{
+    padding: 10px 20px;
+    font-size: large;
+    border-radius: 10px;
+    background-color: greenyellow;
+    margin: 50px 200px;
+    font-weight: 900;
+}
+
+.prev-next-btns:hover{
+    transform: scaleY(-20px);
+    transition: 0.3s;
+}
+
+/* Image details styling */
+
+section:nth-child(1){
+  position: absolute;
+  left: 25%;
+  right: 25%;
+  top: 3%;
+  letter-spacing: 5px;
+  font-size: larger;
+  box-shadow: 0 0 10px blue;
+  padding: 10px;
+  border-radius: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+
+section:nth-child(2){
+  position: absolute;
+  right: 30px;
+  bottom: 300px;
+  max-width: 300px;
+  font-size: larger;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  padding: 10px;
+  border-radius: 20px;
+  line-height: 30px;
+
+}
+
+
+section:nth-child(3){
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: 100px;
+  font-size: larger;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+section strong{
+  text-shadow: 0 0 10px white;
+  color: white;
+}
+
+section p{
+  color: gray;
+}
+
+.btg-btn{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-shadow: 0 0 10px aqua;
+}
+
+.btg-btn i {
+  font-size: large;
+}
