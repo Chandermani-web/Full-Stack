@@ -1,0 +1,128 @@
+---------------------------📘 Complete Explanation: What Happens When JavaScript Runs (Browser & Node.js)-------------------------------------
+
+✅ 1. JavaScript Code Execution Overview
+
+When you run JavaScript (in browser or terminal):
+A JavaScript Engine (like V8) takes your code and executes it.
+It does this in phases: Parsing, Memory allocation, Execution, and sometimes Compilation.
+Execution happens inside something called an Execution Context, tracked by the Call Stack.
+
+JavaScript can run in two environments:
+🌍 Browser (Frontend)
+🖥️ Node.js (Backend)
+
+Each environment has different APIs (DOM in browser, File System in Node), but the core JS engine logic is the same.
+
+🔍 2. What Is a JavaScript Engine?
+
+A JavaScript Engine is a program that:
+Reads your code
+Understands it (via Parsing → AST)
+Executes it (via Interpreter and JIT Compiler)
+
+Common Engines:
+
+V8 → Chrome, Node.js
+SpiderMonkey → Firefox
+JavaScriptCore → Safari
+
+🧠 3. Two Key Phases of JS Execution
+
+📌 Phase 1: Memory Creation Phase (also called Hoisting)
+
+JS scans code line-by-line before execution.
+Creates memory space for variables and functions.
+Variables (let, var, const) are stored in memory:
+    var → undefined
+    let/const → hoisted but not initialized ("TDZ" - Temporal Dead Zone)
+    Function declarations are fully hoisted.
+
+📌 Phase 2: Execution Phase
+
+Now JS executes line-by-line.
+Assigns actual values to variables.
+Runs functions and logic.
+
+⚙️ 4. Execution Context
+
+Every time JS runs a file or a function, it creates an Execution Context (EC).
+
+Each EC has:
+
+A Variable Environment (where variables live)
+A Scope Chain (for closures, nested functions)
+A reference to the this keyword
+
+Types of EC:
+
+Global Execution Context → created when JS file starts
+Function Execution Context → created when function is called
+Eval Context → rarely used
+
+📦 5. Call Stack
+
+The Call Stack tracks all Execution Contexts:
+First, Global EC is pushed onto the stack.
+Then every time a function runs, its Function EC is pushed.
+Once a function finishes, its EC is popped off.
+
+🌳 6. AST (Abstract Syntax Tree)
+
+AST is a tree representation of your code:
+Created during Parsing
+Represents structure of your program
+Used by the engine to understand and optimize your code
+
+🚀 7. JIT Compiler (Just-In-Time)
+
+JIT combines interpretation + compilation:
+JS starts fast via interpreter (Ignition)
+Hot code is profiled and sent to TurboFan to be compiled into machine code
+Improves performance for repeated tasks
+
+🧵 8. Event Loop, Tasks & Queues
+
+JavaScript is single-threaded but handles async via:
+Call Stack → handles sync code
+Web APIs / Node APIs → handle async ops like fetch, setTimeout, fs.readFile()
+Callback Queue (macrotask queue) → setTimeout, setInterval, events
+Microtask Queue → Promise.then, queueMicrotask
+Event Loop checks if Call Stack is empty → then moves queued tasks
+
+Order of Execution:
+
+Call Stack (sync)
+Microtasks (Promises, process.nextTick)
+Macrotasks (timers, events)
+
+🌐 9. JS in Browser (Frontend)
+
+Browser + Engine = Runtime
+Engine: V8 (e.g. Chrome)
+Host Environment: DOM, fetch, alert, etc.
+
+Browser provides:
+
+Web APIs: DOM, timers, fetch, etc.
+Event loop and queues
+Rendering Engine (paints UI)
+
+⚙️ 10. JS in Node.js (Backend)
+
+Node = V8 Engine + Node APIs + libuv
+V8 → JS execution (same as browser)
+Node APIs → File System, HTTP, etc.
+libuv → Manages Event Loop, async I/O with thread pool
+Node-specific Event Loop Phases:
+Timers
+Pending callbacks
+Poll
+Check
+Close callbacks
+Microtasks (between phases)
+
+🧹 11. Garbage Collection
+
+JavaScript automatically cleans unused memory:
+Uses generational GC (young + old objects)
+V8 does this in background

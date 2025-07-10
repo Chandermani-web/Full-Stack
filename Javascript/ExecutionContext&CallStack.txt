@@ -1,0 +1,135 @@
+-------------------------------✅ What is Execution Context?--------------------------------------
+An Execution Context is the environment in which JavaScript code is evaluated and executed.
+
+You can think of it as a box or container that holds everything the JavaScript engine needs to run a piece of code.
+
+🔹 Types of Execution Contexts:
+Type	                                    Description
+Global Execution Context (GEC)	            Created when your program starts. Only one.
+Function Execution Context (FEC)	        Created whenever a function is called. Many can exist.
+Eval Execution Context (rare)	            Created inside the eval() function. Not recommended.
+
+🔍 What Does an Execution Context Contain?
+Every context has 3 main parts:
+1. Variable Environment (Memory Phase)
+    Where all variables and function declarations are stored.
+    Contains things like:
+        var, let, const
+        function definitions
+2. Thread of Execution (Code Phase)
+    Line-by-line execution of your code.    
+3. Scope Chain (Lexical Environment)
+    Gives access to variables from outer contexts (for closures).
+    Helps in variable lookup.
+
+💡 Real Life Analogy:
+Imagine an execution context like a room:
+    Each function gets its own room when called.
+    Inside the room, it sets up memory (where to put stuff), and then runs instructions (execution).
+    Once done, the room is closed and cleaned.
+
+🧠 Example (Simple):
+
+let a = 10;
+function greet() {
+  let name = "Himanshu";
+  console.log("Hello " + name);
+}
+
+greet();
+
+🔄 Step-by-Step:
+1.Global Execution Context is created.
+    Memory Phase:
+        a → undefined
+        greet → function object
+    Execution Phase:    
+        a = 10
+        greet() → triggers new context
+2.Function Execution Context (for greet) is created.
+    Memory Phase:
+        name → undefined
+    Execution Phase:
+        name = "Himanshu"
+        console.log("Hello Himanshu")
+3.Function context is destroyed after completion.
+
+
+----------------------------------------📦 What is the Call Stack?-------------------------------------------
+The Call Stack is a data structure that keeps track of which execution context is currently running.
+Think of it like a stack of plates:
+    The last function called is on the top.
+    When a function finishes, it's removed from the top.
+
+🔄 Flow of the Call Stack:
+
+function one() {
+  console.log("One");
+  two();
+}
+
+function two() {
+  console.log("Two");
+}
+
+one();
+
+
+🧠 Step-by-Step Call Stack:
+
+1.Global Execution Context is created → pushed to stack
+2.one() is called → new context → pushed
+3.Inside one(), console.log("One") runs
+4.Then two() is called → new context → pushed
+5.Inside two(), console.log("Two") runs
+6.two() ends → popped
+7.one() ends → popped
+8.Global context remains → ends when program finishes
+
+📊 Call Stack Visual (Text Format)
+
+[Empty]
+↓
+Global Execution Context
+↓
+Global → one()
+↓
+Global → one() → two()
+↓
+Global → one()
+↓
+Global
+↓
+[Empty]
+
+
+🖼️ Visual Diagram: Execution Context + Call Stack
+I'll describe the visual here (and can generate the image if you want too):
+
+
+╔══════════════════════════════╗
+║      Call Stack (Top-Down)  ║
+╠══════════════════════════════╣
+║ Function Execution Context   ║ ← if inside a function
+╠══════════════════════════════╣
+║ Global Execution Context     ║ ← always created first
+╚══════════════════════════════╝
+
+Each Execution Context contains:
+→ Memory Environment (variables/functions)
+→ Code Execution (line-by-line)
+→ Scope Chain
+
+
+✅ Summary Table
+Concept	Description
+Execution Context	A container created by JS to run code
+Global Context	Created automatically for global code
+Function Context	Created every time a function is invoked
+Variable Environment	Stores variables and function declarations
+Thread of Execution	Executes code line by line
+Call Stack	Stack that tracks execution contexts
+
+🔚 Conclusion:
+    Execution Context = The "room" or environment in which code runs.
+    Call Stack = A "stack of rooms" that tracks which function is currently running.

@@ -1,0 +1,37 @@
+-----------------------------------------🧠 What is Hoisting?---------------------------------------------
+Hoisting is JavaScript’s default behavior of moving declarations to the top of the current scope (before code execution starts).
+
+------------------------------------🧱 Phase 1: Memory Creation Phase (a.k.a. Hoisting Phase)--------------------------
+JavaScript scans the entire code before executing it and sets up memory for variables and functions.
+
+🔍 What Happens:
+1.Create Global Execution Context (GEC):
+    Environment where all code runs initially.
+    It has two parts:
+        Memory (Variable Environment)
+        Code (Thread of Execution)
+2.Variables declared with var:
+    Hoisted to the top.
+    Assigned value: undefined.
+3.Functions declared using function:
+    Entire function (code) is hoisted.
+4.Variables declared with let and const:
+    Are hoisted, BUT placed in Temporal Dead Zone (TDZ).
+    Not accessible until the line where they're declared.
+
+---------------------------------------------------🏃 Phase 2: Code Execution Phase--------------------------------------
+
+This is the second phase where the actual code is run line by line.
+
+🔍 Purpose:
+Assign real values to variables.
+Execute function calls.
+Handle control flow (if, loops, etc.)
+
+📌 What happens during this phase:
+    1.Variables are initialized with their actual values.
+    2.Functions are executed when called.
+    3.Any code logic is run in sequence.
+    4.The call stack is used to keep track of what’s being executed.
+
+

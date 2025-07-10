@@ -1,0 +1,58 @@
+---------------------------------------------------🧠 What is AST (Abstract Syntax Tree)-----------------------------------------------------------
+
+AST is a tree-like structure that represents your code in a way that the JavaScript engine or compiler can understand and work with.
+
+Think of it as:
+
+💬 "A diagram or map of your code that explains what it means."
+
+🔍 Simple Example:
+Let’s take this simple JavaScript code:
+let x = 5 + 3;
+This is what you write.
+But the JavaScript engine (like V8) converts it to something like this:
+
+VariableDeclaration
+ └─ Identifier: x
+ └─ BinaryExpression
+     ├─ Literal: 5
+     ├─ Operator: +
+     └─ Literal: 3
+This is the AST.
+
+🧱 Structure of AST
+
+Nodes → Each element of the code (variable, operator, function, etc.) is a node.
+Tree → The entire code is structured like a family tree.
+Hierarchy → Helps the engine understand which part comes first, what depends on what.
+
+📦 Why AST is Important?
+Use Case							Explanation
+✅ Parsing Code							JS engines convert source code to AST before running
+✅ Code Transformation						Tools like Babel, ESLint, Prettier use AST to modify or format code
+✅ Linting & Errors						AST helps in understanding syntax errors
+✅ Minification							Compressing JS code uses AST
+✅ Transpilation						Babel converts modern JS to older versions using AST
+
+🛠 Tools That Use AST:
+Babel – Converts modern JS (ES6+) to old JS
+ESLint – Linting rules
+Prettier – Code formatting
+Webpack – Bundling
+TypeScript Compiler – Converts TS to JS
+
+🧪 Real World Analogy:
+📄 You write a sentence in English:
+"Ali eats an apple."
+
+🧠 AST would be:
+
+Subject → Ali
+Verb → eats
+Object → an apple
+
+This is how the computer understands your code grammatically.
+
+🔗 Summary:
+AST = A tree representation of your source code that the JS engine or compiler builds before executing it.
+It helps in syntax checking, transformation, optimization, and execution.

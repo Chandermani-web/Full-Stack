@@ -1,0 +1,47 @@
+-------------------------------------------------✅ Compiler vs Interpreter — Easy Comparison-------------------------------------------------------------
+
+Feature						Compiler								Interpreter
+🏗️ How it works			Converts entire code into machine code before execution				Reads and runs code line by line
+🕒 Speed			Faster execution, but slower to start						Slower execution, but starts immediately
+💾 Output			Creates a binary/exe file							No file, runs directly
+🛑 Error Handling		Shows all errors at once							Stops at first error
+📦 Example Languages		C, C++, Java (compiled to bytecode)						Python, JavaScript (older engines)
+🚀 JS Modern Engines		Use both (Interpreter + JIT Compiler)						—
+
+💡 Think of it Like Cooking 🍳
+
+Compiler:
+👨‍🍳 You cook the whole meal and then serve it all at once.
+→ Faster to eat, but longer to prepare.
+
+Interpreter:
+👨‍🍳 You cook and serve line by line (like a dosa counter).
+→ Starts fast, but overall slower.
+
+🧪 Code Example
+
+Let's say:
+console.log("Line 1");
+console.log(a);      // a is not defined
+console.log("Line 3");
+
+🧵 Interpreter:
+
+Runs Line 1
+Hits error on Line 2 → stops there.
+Never reaches Line 3.
+
+⚙️ Compiler:
+
+Analyzes the whole code before running.
+Shows all errors before even starting execution.
+
+
+🤖 What Does JavaScript Use?
+
+Old days: Purely Interpreted
+Today (V8, Node.js): Interpreter + JIT Compiler (Hybrid)
+
+🧠 Summary:
+Compiler = Converts all → then runs
+Interpreter = Converts & runs → line-by-line

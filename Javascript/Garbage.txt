@@ -1,0 +1,113 @@
+🧹 What is Garbage Collection?
+Garbage Collection (GC) is the process of automatically finding and removing values that are no longer needed (unreachable) to free up memory in your program.
+
+🧠 Why Is It Needed?
+In JavaScript, memory is used to store:
+
+    Variables
+    Objects
+    Arrays
+    Functions
+
+Over time, your program may create lots of values. Some may no longer be used — but they still take up memory!
+
+Garbage collection ensures:
+✅ Your app doesn’t run out of memory
+✅ Old data is cleaned up
+✅ Performance stays smooth
+
+🔍 How JavaScript Garbage Collector Works
+JavaScript uses a technique called:
+
+📌 "Mark-and-Sweep Algorithm"
+
+🔄 Step-by-Step Process:
+1. Mark Phase – Find all reachable (used) values.
+    The GC starts from the "root" (like window, globalThis, or the current execution context).
+    It marks every variable and object that is still accessible.
+2. Sweep Phase – Clean up.
+    All unmarked (unreachable) values are deleted from memory.
+
+🔗 What Does “Reachable” Mean?
+A value is reachable if:
+    It's stored in a variable that's still in use.
+    It's a property of a reachable object.
+    It's part of the current function's execution context.
+    It can be accessed in any way by your running code.
+
+🟥 If nothing references the value — it becomes unreachable → eligible for garbage collection
+
+
+🧪 Example:
+
+function showMessage() {
+  let message = "Hello Himanshu";
+  console.log(message);
+}
+
+showMessage();
+
+    message is stored in memory during the function.
+    Once showMessage() finishes:
+        message is no longer reachable.
+        Garbage Collector deletes it from memory.
+
+🧊Example With Object:
+let user = {
+  name: "Himanshu"
+};
+
+user = null; // now the object is unreachable
+
+
+    When user is set to null, the original object is no longer referenced.
+    The Garbage Collector will clean it up.
+
+🧠 Visual Representation:
+[ Root / Global ]
+     ↓
+  user → { name: "Himanshu" }
+
+(After user = null)
+[ Root / Global ]
+     ↓
+   user → null
+   { name: "Himanshu" } ← unreachable → deleted
+
+
+⚠️ Things That Prevent Garbage Collection
+🔸 1. Circular References
+let a = {};
+let b = {};
+a.ref = b;
+b.ref = a;
+
+
+    These objects reference each other, so they stay alive even if nothing else references them.
+    Modern JS engines can detect this and clean up, but it's tricky.
+
+🔸 2. Global Variables
+    Global variables are always reachable, so their data is never collected unless manually set to null or undefined.
+
+💡 Best Practices to Help Garbage Collection
+Tip	                                                                  Description
+✅ Use let/const with limited scope	                                Automatically removes memory when out of scope
+✅ Set unused variables to null	                                    Helps GC know it can delete them
+❌ Avoid unnecessary global variables                                They live forever unless manually cleaned
+❌ Be careful with large objects in closures                        	They may stay in memory longer than needed
+
+🧾 Summary
+Concept	Meaning
+Garbage Collection	Automatic removal of unused values
+Reachable Values	Can be accessed by your code
+Unreachable Values	Can’t be accessed → deleted
+Mark-and-Sweep	GC algorithm used by JS
+Memory Leak	When unused memory is never freed
+
+🎯 Final Thought
+You don’t usually need to manage memory yourself in JavaScript — the engine does it for you. But understanding how it works helps you:
+
+✅ Write better, more efficient code
+✅ Avoid memory leaks
+✅ Manage large apps confidently
+
