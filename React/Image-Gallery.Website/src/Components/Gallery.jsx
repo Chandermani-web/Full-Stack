@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UseGetImages from "../Hooks/UseGetImages.jsx";
 import { useNavigate } from "react-router-dom";
 
@@ -10,11 +10,22 @@ const Gallery = () => {
     navigate(`/gallery/${id}`); // ✅ Make sure path matches route
   };
 
+  useEffect(() => {
+    
+  });
+
   return (
     <div style={{ padding: "2rem" }}>
       <h1 className="text-center text-4xl font-bold">Image Gallery</h1>
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" , padding: "20px 60px"}}>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "1rem",
+          padding: "20px 60px",
+        }}
+      >
         {images.map((item) => (
           <div
             key={item.id}

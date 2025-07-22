@@ -45,7 +45,7 @@ const Image = () => {
   return (
     <div className="image-detail-api-container">
       <button onClick={()=>{
-        navigate("/gallery");
+        navigate("/");
       }}
       className="btg-btn"
       ><i className="ri-arrow-left-line"></i> Back to Gallery</button>

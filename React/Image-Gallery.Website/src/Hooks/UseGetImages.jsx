@@ -12,6 +12,7 @@ const UseGetImages = () => {
           `https://api.slingacademy.com/v1/sample-data/photos?offset=0&limit=${limit}`
         );
         setData(res.data.photos);
+        console.log(res.data.photos);
       } catch (err) {
         console.error('Error:', err);
       }
