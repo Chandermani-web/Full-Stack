@@ -51,10 +51,10 @@ const Purchase = () => {
   return(
     <div className="bg-zinc-700 relative right-30 h-[100%] w-[100%] flex flex-col justify-center text-left items-center gap-3">
       <button
-      className="absolute top-3 right-3 bg-white p-2 rounded-4xl"
+      className="absolute top-3 right-2 text-3xl text-white hover:text-red-500 transition duration-300 ri-close-circle-line"
       onClick={()=>{setopen((prev)=>!prev)}}
       >
-        Close
+        
       </button>
       <img src={Product.image} alt={Product.title} className="h-50 w-50 object-contain rounded-2xl bg-white p-1"/>
       <h1 className="text-base md:text-lg font-semibold text-gray-800 mb-1 line-clamp-2">Title:{Product.title}</h1>

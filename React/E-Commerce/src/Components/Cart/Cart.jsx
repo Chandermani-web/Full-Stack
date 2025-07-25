@@ -1,14 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItemById, incrementItem, decrementItem } from '../../Store/CartSlice.js';
+import { removeItemById, incrementItem, decrementItem, clearItems} from '../../Store/CartSlice.js';
 
 const Cart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl relative mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4 text-center text-blue-600">Your Cart</h1>
+      <button 
+      className='absolute bg-black text-white p-2 right-0 top-3 rounded-xl ri-refresh-line'
+      onClick={() => dispatch(clearItems())}
+      >Clear Cart</button>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (

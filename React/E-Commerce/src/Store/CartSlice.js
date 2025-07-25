@@ -28,7 +28,7 @@ const CartSlice = createSlice({
       if (item && item.quantity > 1) item.quantity--;
     },
     clearItems: (state) => {
-      state.cartItems = [];
+      state.cartItems.length = [];
     },
   },
 });

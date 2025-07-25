@@ -4,6 +4,7 @@ import {
   removeOrderById,
   incrementOrder,
   decrementOrder,
+  clearOrders,
 } from '../../Store/OrderSlice';
 
 const Order = () => {
@@ -11,9 +12,12 @@ const Order = () => {
   const orderItems = useSelector((state) => state.order.orderItems);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
+    <div className="max-w-6xl relative mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">My Orders</h2>
-
+      <button 
+      className='absolute bg-black text-white p-2 right-0 top-3 rounded-xl ri-refresh-line'
+      onClick={()=>dispatch(clearOrders())}
+      >Clear Order</button>
       {orderItems.length === 0 ? (
         <p className="text-center text-gray-500 text-lg">You have not placed any orders yet.</p>
       ) : (

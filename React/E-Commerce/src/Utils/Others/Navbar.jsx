@@ -7,7 +7,7 @@ const Navbar = () => {
   const orderItems = useSelector((store) => store.order.orderItems);
 
   return (
-    <header className="bg-black text-white">
+    <header className="bg-black text-white z-10">
       <nav className="px-4 py-5 flex justify-between items-center align-center">
         <h1 className="text-xl font-semibold text-orange-300">🛍️Chandermani.E-Commerce</h1>
         <ul className="flex gap-10 items-center">
