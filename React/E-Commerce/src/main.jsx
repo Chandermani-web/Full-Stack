@@ -9,7 +9,6 @@ const Home = lazy(() => import("./Components/Home/Home.jsx"));
 const Shop = lazy(() => import("./Components/Shop/Display/Display.jsx"));
 const Purchase = lazy(() => import("./Components/Shop/Purchase/Purchase.jsx"));
 const Order = lazy(() => import("./Components/Order/Order.jsx"));
-const OrderProductDetail = lazy(() =>import("./Components/Order/OrderProductDetail.jsx"));
 const Cart = lazy(() => import("./Components/Cart/Cart.jsx"));
 const Menu = lazy(() => import("./Components/Menu/Menu.jsx"));
 const Account = lazy(() => import("./Components/Menu/Components/Account.jsx"));
@@ -35,23 +34,20 @@ const router = createBrowserRouter([
       },
       {
         path: "shop",
-        element: <Shop />,
         children: [
           {
-            path: "purchase",
+            path: "products",
+            element: <Shop />,
+          },
+          {
+            path: "purchase/:id",
             element: <Purchase />,
           },
         ],
       },
       {
         path: "order",
-        element: <Order />,
-        children: [
-          {
-            path: "productdetail",
-            element: <OrderProductDetail />,
-          },
-        ],
+        element: <Order />
       },
       {
         path: "menu",
