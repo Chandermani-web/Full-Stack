@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const UseGetData = () => {
   const [Data, setData] = useState([]);
-  const [id , setId] = useState(20);
+  const [id , setId] = useState(149);
   const fetchproduct = async () => {
     try{
       const response = await fetch(`https://fakestoreapi.in/api/products?limit=${id}`);

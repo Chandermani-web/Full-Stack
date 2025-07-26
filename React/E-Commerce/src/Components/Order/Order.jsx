@@ -1,11 +1,12 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { toast } from "react-toastify";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   removeOrderById,
   incrementOrder,
   decrementOrder,
   clearOrders,
-} from '../../Store/OrderSlice';
+} from "../../Store/OrderSlice";
 
 const Order = () => {
   const dispatch = useDispatch();
@@ -13,13 +14,25 @@ const Order = () => {
 
   return (
     <div className="max-w-6xl relative mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">My Orders</h2>
-      <button 
-      className='absolute bg-black text-white p-2 right-0 top-3 rounded-xl ri-refresh-line'
-      onClick={()=>dispatch(clearOrders())}
-      >Clear Order</button>
+      <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">
+        My Orders
+      </h2>
+      <button
+        className="absolute bg-black text-white p-2 right-0 top-3 rounded-xl ri-refresh-line"
+        onClick={() => {
+          dispatch(clearOrders());
+          toast.success("✅ Clear History Successfully", {
+            position: "top-center",
+            autoClose: 2000,
+          });
+        }}
+      >
+        Clear Order
+      </button>
       {orderItems.length === 0 ? (
-        <p className="text-center text-gray-500 text-lg">You have not placed any orders yet.</p>
+        <p className="text-center text-gray-500 text-lg">
+          You have not placed any orders yet.
+        </p>
       ) : (
         <div className="space-y-6">
           {orderItems.map((item, index) => {
@@ -39,13 +52,26 @@ const Order = () => {
                 />
 
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-800">{item.title}</h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
+                  <h3 className="text-lg font-bold text-gray-800">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 line-clamp-2">
+                    {item.description}
+                  </p>
                   <div className="mt-2 text-sm text-gray-700">
-                    <p>Brand: <span className="text-black">{item.brand}</span></p>
-                    <p>Model: <span className="text-black">{item.model}</span></p>
-                    <p>Color: <span className="text-black">{item.color}</span></p>
-                    <p>Category: <span className="text-black">{item.category}</span></p>
+                    <p>
+                      Brand: <span className="text-black">{item.brand}</span>
+                    </p>
+                    <p>
+                      Model: <span className="text-black">{item.model}</span>
+                    </p>
+                    <p>
+                      Color: <span className="text-black">{item.color}</span>
+                    </p>
+                    <p>
+                      Category:{" "}
+                      <span className="text-black">{item.category}</span>
+                    </p>
                   </div>
                 </div>
 
@@ -65,7 +91,9 @@ const Order = () => {
                       +
                     </button>
                   </div>
-                  <p className="mt-2 text-green-600 font-bold text-lg">${total}</p>
+                  <p className="mt-2 text-green-600 font-bold text-lg">
+                    ${total}
+                  </p>
                   <button
                     className="text-sm mt-2 text-red-500 hover:underline"
                     onClick={() => dispatch(removeOrderById(item.id))}
