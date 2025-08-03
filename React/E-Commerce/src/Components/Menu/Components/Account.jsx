@@ -1,9 +1,10 @@
 import React from 'react'
+import Registration from '../../Registration/Registration'
 
 const Account = () => {
   return (
     <div>
-      Account page
+      <Registration />
     </div>
   )
 }

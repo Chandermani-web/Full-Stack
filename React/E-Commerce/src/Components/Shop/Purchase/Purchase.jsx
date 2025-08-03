@@ -109,7 +109,7 @@ const Purchase = () => {
         className="absolute top-5 left-5 bg-black text-white p-2 rounded-2xl ri-arrow-left-line"
         onClick={handleNavigate}
       >
-        Back to Dashboard
+        Back to Shop
       </button>
 
       <div className="flex-1 relative">

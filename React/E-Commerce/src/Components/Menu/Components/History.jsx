@@ -41,7 +41,7 @@ const History = () => {
           {historyData.map((item, index) => (
             <li
               key={index}
-              className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer"
+              className="bg-white p-4 rounded-lg shadow hover:shadow-lg transition-shadow cursor-pointer "
               onClick={() => toggleExpand(index)}
             >
               <div className="flex gap-10 items-baseline">

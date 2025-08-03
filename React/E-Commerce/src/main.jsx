@@ -19,6 +19,8 @@ const Service = lazy(() => import("./Components/Menu/Components/Service.jsx"));
 const Settings = lazy(() =>
   import("./Components/Menu/Components/Settings.jsx")
 );
+
+const Registration = lazy(()=> import("./Components/Registration/Registration.jsx"))
 const Signup = lazy(() =>
   import("./Components/Registration/Signup/Signup.jsx")
 );
@@ -82,6 +84,7 @@ const router = createBrowserRouter([
       },
       {
         path: "registration",
+        element: <Registration />,
         children: [
           {
             path: "signup",
