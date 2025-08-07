@@ -1,6 +1,6 @@
 import { URL } from 'url'
 
-const myURL = new URL("https://www.example.com:5000/p/a/t/h?query=string#hash")
+const myURL = new URL("https://www.example.com:5000/pfdnbvfdjvf/a/t/h?query=string#hash")
 
 console.log(myURL.pathname)
 console.log(myURL.protocol)
