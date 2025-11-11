@@ -1,0 +1,22 @@
+# Base image
+FROM node:20-alpine3.18
+
+# set the working directory
+WORKDIR /app
+
+# copy project files
+# COPY package.json .
+# COPY package-lock.json .
+COPY package*.json .
+
+EXPOSE 3000
+ENTRYPOINT [ "" ]
+
+# install dependencies
+RUN npm install
+
+# copy the rest of the application code
+COPY . .
+
+# start the application
+CMD [ "npm", "start" ]

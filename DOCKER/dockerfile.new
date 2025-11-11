@@ -1,0 +1,25 @@
+FROM node:20-alpine3.18 AS base
+
+WORKDIR /app
+
+# build stage
+FROM base AS builder
+COPY package*.json .
+RUN npm install
+COPY . .
+RUN npm run build
+
+# production stage
+FROM base AS production
+
+WORKDIR /app
+
+COPY --from=builder /app/dist/ ./dist
+COPY --from=builder /app/package*.json ./
+RUN npqm install --omit=dev
+
+RUN npm cache clean --force
+
+EXPOSE 3000
+
+CMD [ "npm", "start" ]
